@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitleEl">&quot;PRO INJENEERING GROUP&quot; ООО — промышленное и лабораторное оборудование</title>
+  <meta id="metaDescriptionEl" name="description" content="&quot;PRO INJENEERING GROUP&quot; ООО — промышленное и лабораторное оборудование для точных процессов. Печи, сушильные шкафы, вытяжные шкафы, мельницы и оборудование для пробоподготовки." />
+
+  <style>
+    :root {
+      --blue: #1565d8;
+      --blue-dark: #0b4db3;
+      --blue-soft: #f5f9ff;
+      --blue-line: #d8e8ff;
+      --text: #152033;
+      --muted: #65738a;
+      --white: #ffffff;
+      --radius: 26px;
+      --radius-sm: 20px;
+      --shadow: 0 22px 60px rgba(21, 101, 216, 0.12);
+      --shadow-card: 0 14px 42px rgba(21, 101, 216, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1240px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    /* ——— Header ——— */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(21, 101, 216, 0.12);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 82px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      min-width: 0;
+      max-width: min(300px, 48vw);
+      line-height: 1.2;
+    }
+
+    .brand-line1 {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0b2c62;
+    }
+
+    .brand-line2 {
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 0.02em;
+      color: #5a6b85;
+    }
+
+    @media (max-width: 480px) {
+      .brand-text {
+        max-width: min(220px, 54vw);
+      }
+
+      .brand-line1 {
+        font-size: 11px;
+      }
+
+      .brand-line2 {
+        font-size: 9px;
+      }
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 750;
+      color: #314057;
+    }
+
+    .menu a:hover {
+      color: var(--blue);
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px;
+      border: 1px solid #d8e8ff;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: #65738a;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 8px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .lang-btn:hover {
+      color: #1565d8;
+      background: #f5f9ff;
+    }
+
+    .lang-btn.active {
+      background: #1565d8;
+      color: #ffffff;
+    }
+
+    .mobile-drawer .lang-switcher {
+      margin: 12px 0 8px;
+    }
+
+    .footer-contact-title {
+      margin-top: 18px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .footer-contact-sub {
+      margin-top: 8px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.55;
+      max-width: 420px;
+    }
+
+    .work-time {
+      margin-top: 12px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .work-time strong {
+      display: block;
+      margin-bottom: 4px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: none;
+      font-size: 14px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 14px 32px rgba(21, 101, 216, 0.24);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(21, 101, 216, 0.28);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--blue);
+      border: 1px solid var(--blue-line);
+      box-shadow: 0 10px 28px rgba(21, 101, 216, 0.08);
+    }
+
+    .btn-secondary:hover {
+      background: var(--blue-soft);
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--blue-line);
+      background: var(--white);
+      color: var(--blue);
+      font-size: 22px;
+      cursor: pointer;
+      line-height: 1;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-drawer {
+      display: none;
+      padding-bottom: 18px;
+    }
+
+    .mobile-drawer.open {
+      display: block;
+    }
+
+    .mobile-drawer a {
+      display: block;
+      padding: 13px 0;
+      font-weight: 800;
+      color: #314057;
+      border-bottom: 1px solid rgba(21, 101, 216, 0.09);
+    }
+
+    /* ——— Hero ——— */
+    .hero {
+      position: relative;
+      background: linear-gradient(180deg, #ffffff 0%, var(--blue-soft) 100%);
+      overflow: hidden;
+      padding: 56px 0 88px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: -160px;
+      top: -140px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: rgba(21, 101, 216, 0.1);
+      filter: blur(32px);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 4.8vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+      max-width: 14ch;
+      color: var(--text);
+    }
+
+    .hero-lead {
+      margin-top: 22px;
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-stats {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 680px;
+    }
+
+    .hero-stat {
+      background: var(--white);
+      border: 1px solid var(--blue-line);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .hero-stat:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-stat strong {
+      display: block;
+      color: var(--blue);
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .hero-stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 720;
+      line-height: 1.35;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-photo-card {
+      background: var(--white);
+      border: 1px solid var(--blue-line);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-photo-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
+      min-height: 300px;
+    }
+
+    .hero-photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(21, 101, 216, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-photo-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    .hero-photo-grid .hero-photo-main {
+      grid-row: 1 / -1;
+      min-height: 220px;
+    }
+
+    .hero-photo-caption {
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 750;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-photo-grid .missing-image-placeholder.hero-photo-main {
+      grid-row: 1 / -1;
+      min-height: 200px;
+    }
+
+    .hero-photo-grid .missing-image-placeholder:not(.hero-photo-main) {
+      min-height: 120px;
+    }
+
+    .missing-image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      padding: 24px;
+      background: linear-gradient(135deg, #eff7ff, #ffffff);
+      color: #65738a;
+      border-radius: 22px;
+      box-sizing: border-box;
+    }
+
+    .missing-image-placeholder strong {
+      color: #1565d8;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .missing-image-placeholder span {
+      font-size: 12px;
+      word-break: break-all;
+    }
+
+    .product-media .missing-image-placeholder {
+      min-height: 232px;
+    }
+
+    /* ——— Sections ——— */
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-blue {
+      background: var(--blue-soft);
+    }
+
+    .section-head {
+      margin-bottom: 42px;
+      max-width: 720px;
+    }
+
+    .kicker {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 3.6vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      font-weight: 850;
+      color: var(--text);
+    }
+
+    .section-sub {
+      margin-top: 14px;
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .advantages {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .adv-card {
+      background: var(--white);
+      border: 1px solid var(--blue-line);
+      border-radius: var(--radius-sm);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .adv-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .adv-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: var(--blue);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 32px rgba(21, 101, 216, 0.22);
+    }
+
+    .adv-card h3 {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #111d30;
+    }
+
+    .adv-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+
+    /* ——— Catalog ——— */
+    .catalog-toolbar {
+      display: grid;
+      grid-template-columns: 1fr minmax(220px, 340px);
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cat-btn {
+      padding: 11px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--blue);
+      background: var(--white);
+      color: #42536d;
+      font-size: 13px;
+      font-weight: 820;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .cat-btn:hover {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .cat-btn.active {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+      box-shadow: 0 12px 28px rgba(21, 101, 216, 0.2);
+    }
+
+    .search-wrap {
+      position: relative;
+    }
+
+    .search-wrap input {
+      width: 100%;
+      height: 50px;
+      border: 1px solid var(--blue-line);
+      border-radius: 999px;
+      padding: 0 18px 0 46px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      outline: none;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .search-wrap input:focus {
+      box-shadow: 0 0 0 4px rgba(21, 101, 216, 0.12);
+    }
+
+    .search-wrap .icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--blue);
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--blue-line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-media {
+      height: 232px;
+      margin: 14px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #eff7ff, #ffffff);
+      border: 1px solid rgba(21, 101, 216, 0.08);
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .product-card:hover .product-media img {
+      transform: scale(1.04);
+    }
+
+    .product-body {
+      padding: 6px 22px 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #edf6ff;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .product-body h3 {
+      min-height: 52px;
+      font-size: 18px;
+      line-height: 1.28;
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      color: #101b2e;
+    }
+
+    .product-price {
+      margin-top: 10px;
+      font-size: 15px;
+      font-weight: 850;
+      color: var(--blue);
+      letter-spacing: -0.02em;
+    }
+
+    .product-more {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid var(--blue-line);
+      border-radius: 14px;
+      padding: 10px 14px;
+      background: var(--blue-soft);
+    }
+
+    .product-more summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--blue);
+      list-style: none;
+    }
+
+    .product-more summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .product-more p {
+      margin-top: 10px;
+      min-height: 0;
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    .product-body p {
+      min-height: 72px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.62;
+    }
+
+    .specs {
+      list-style: none;
+      margin: 16px 0 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .specs li {
+      font-size: 13.5px;
+      color: #4d5d75;
+      font-weight: 650;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.45;
+    }
+
+    .specs li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .product-body .btn {
+      width: 100%;
+      padding: 14px 18px;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 48px 24px;
+      border-radius: var(--radius);
+      border: 1px dashed var(--blue-line);
+      background: var(--white);
+      color: var(--muted);
+    }
+
+    /* ——— About ——— */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .about-visual {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--blue-line);
+      box-shadow: var(--shadow);
+      background: var(--white);
+      padding: 14px;
+    }
+
+    .about-visual img {
+      border-radius: 22px;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .about-visual .missing-image-placeholder {
+      min-height: 400px;
+      width: 100%;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .mini-card {
+      background: var(--white);
+      border: 1px solid var(--blue-line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 900;
+      color: #101b2e;
+    }
+
+    .mini-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* ——— Form ——— */
+    .cta {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--blue-dark), #1780f5);
+      padding: 48px;
+      color: var(--white);
+      box-shadow: 0 28px 80px rgba(21, 101, 216, 0.28);
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .cta-form-column {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .cta .kicker {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .cta h2 {
+      margin-top: 8px;
+      font-size: clamp(28px, 3.4vw, 42px);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .cta .lead {
+      margin-top: 16px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .form-card {
+      background: rgba(255, 255, 255, 0.97);
+      color: var(--text);
+      border-radius: 22px;
+      padding: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 12px;
+      font-weight: 900;
+      color: #34445b;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--blue-line);
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .field textarea {
+      min-height: 108px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      box-shadow: 0 0 0 4px rgba(21, 101, 216, 0.12);
+    }
+
+    /* ——— Footer ——— */
+    .footer {
+      background: #0d1728;
+      color: var(--white);
+      padding: 50px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr auto;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .footer-logo-row {
+      margin-bottom: 14px;
+    }
+
+    .footer-logo-row img {
+      height: 48px;
+      padding: 6px 10px;
+      background: var(--white);
+      border-radius: 14px;
+    }
+
+    .footer-company-name {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand-line1 {
+      font-size: clamp(1.05rem, 2.4vw, 1.32rem);
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    .footer-brand-line2 {
+      font-size: clamp(0.78rem, 1.8vw, 0.92rem);
+      font-weight: 750;
+      color: rgba(255, 255, 255, 0.72);
+      letter-spacing: 0.02em;
+    }
+
+    .footer-contact-list .address-line {
+      max-width: 100%;
+      word-break: break-word;
+      hyphens: auto;
+    }
+
+    .footer-tagline {
+      margin-top: 0;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.65;
+      max-width: 440px;
+      font-size: 14px;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 650;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .footer-contact-list li {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .footer-contact-list a {
+      color: #9ecbff;
+      text-decoration: none;
+      font-weight: 750;
+    }
+
+    .footer-contact-list a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-block {
+      display: grid;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 650;
+      color: rgba(255, 255, 255, 0.78);
+      min-width: 0;
+    }
+
+    .footer .btn {
+      justify-self: end;
+    }
+
+    @media (max-width: 1040px) {
+      .menu,
+      .nav-center .btn-primary {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .cta-inner,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .advantages {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .catalog-toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .footer .btn {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 28px, 1240px);
+      }
+
+      .nav {
+        min-height: 74px;
+      }
+
+      .brand img {
+        height: 40px;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .hero-stats,
+      .advantages,
+      .products,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 40px 0 72px;
+      }
+
+      .cta {
+        padding: 28px;
+        border-radius: 22px;
+      }
+
+      .hero-photo-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+      }
+
+      .hero-photo-grid .hero-photo-main {
+        grid-row: auto;
+        min-height: 160px;
+        max-height: 200px;
+      }
+
+      .hero-photo-grid img:not(.hero-photo-main) {
+        min-height: 120px;
+        max-height: 140px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#home" id="brandHomeLink" aria-label="PRO INJENEERING GROUP, ООО">
+          <img id="logoHeader" src="publicimages/logo.png" alt="PRO INJENEERING GROUP" />
+          <span class="brand-text">
+            <span class="brand-line1" id="brandLine1">PRO INJENEERING GROUP</span>
+            <span class="brand-line2" id="brandLine2">ООО</span>
+          </span>
+        </a>
+
+        <div class="nav-center">
+          <nav class="menu" aria-label="Навигация">
+            <a href="#catalog" data-i18n="navCatalog">Каталог</a>
+            <a href="#advantages" data-i18n="navAdvantages">Преимущества</a>
+            <a href="#about" data-i18n="navAbout">О нас</a>
+            <a href="#request" data-i18n="navRequest">Заявка</a>
+            <a href="#contacts" data-i18n="navContacts">Контакты</a>
+          </nav>
+          <div class="lang-switcher" aria-label="Язык">
+            <button type="button" class="lang-btn active" data-lang="ru">RU</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="uz">UZ</button>
+          </div>
+          <a class="btn btn-primary" href="#request" data-i18n="leaveRequest">Оставить заявку</a>
+          <button type="button" class="mobile-toggle" id="mobileBtn" aria-label="Меню">☰</button>
+        </div>
+      </div>
+
+      <div class="mobile-drawer" id="mobileDrawer">
+        <div class="lang-switcher" aria-label="Язык">
+          <button type="button" class="lang-btn active" data-lang="ru">RU</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="uz">UZ</button>
+        </div>
+        <a href="#catalog" data-i18n="navCatalog">Каталог</a>
+        <a href="#advantages" data-i18n="navAdvantages">Преимущества</a>
+        <a href="#about" data-i18n="navAbout">О нас</a>
+        <a href="#request" data-i18n="navRequest">Заявка</a>
+        <a href="#contacts" data-i18n="navContacts">Контакты</a>
+        <a class="btn btn-primary" href="#request" style="margin-top: 12px; text-align: center;" data-i18n="leaveRequest">Оставить заявку</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <h1 data-i18n="heroTitle">Промышленное и лабораторное оборудование для точных процессов</h1>
+          <p class="hero-lead" data-i18n="heroLead">
+            «PRO INJENEERING GROUP» ООО поставляет печи, сушильные шкафы, вытяжные шкафы, мельницы, шкафы управления и оборудование для пробоподготовки.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalog" data-i18n="heroCatalogBtn">Смотреть каталог</a>
+            <a class="btn btn-secondary" href="#request" data-i18n="heroConsultBtn">Получить консультацию</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong data-i18n="stat1">16+</strong>
+              <span data-i18n="stat1Text">позиций оборудования</span>
+            </div>
+            <div class="hero-stat">
+              <strong data-i18n="stat2">B2B</strong>
+              <span data-i18n="stat2Text">для промышленности</span>
+            </div>
+            <div class="hero-stat">
+              <strong data-i18n="stat3">24/7</strong>
+              <span data-i18n="stat3Text">приём заявок</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo-card">
+            <div class="hero-photo-grid">
+              <img
+                class="hero-photo-main"
+                src="publicimages/p7.png"
+                alt="Электропечь лабораторная ЭПШТ-24"
+                onerror="productImageFallback(this)"
+              />
+              <img
+                src="publicimages/p16.png"
+                alt="Шаровая мельница МШ-100"
+                onerror="productImageFallback(this)"
+              />
+              <img
+                src="publicimages/p13.png"
+                alt="Шкаф вытяжной ЛАБ-1800"
+                onerror="productImageFallback(this)"
+              />
+            </div>
+            <p class="hero-photo-caption" data-i18n="heroCaption">Оборудование «PRO INJENEERING GROUP» ООО в каталоге</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-blue" id="advantages">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-i18n="advantagesKicker">Преимущества</div>
+          <h2 class="section-title" data-i18n="advantagesTitle">Почему выбирают «PRO INJENEERING GROUP» ООО</h2>
+          <p class="section-sub" data-i18n="advantagesSub">Корпоративный B2B-подход: доверие, техническая детализация и быстрый переход к заявке.</p>
+        </div>
+        <div class="advantages">
+          <article class="adv-card">
+            <div class="adv-icon">✓</div>
+            <h3 data-i18n="adv1Title">Надёжный подбор</h3>
+            <p data-i18n="adv1Text">Сопоставляем вашу технологическую задачу с характеристиками оборудования и режимами эксплуатации.</p>
+          </article>
+          <article class="adv-card">
+            <div class="adv-icon">⚙</div>
+            <h3 data-i18n="adv2Title">Технический подход</h3>
+            <p data-i18n="adv2Text">В карточках — ключевые параметры: температура, мощность, габариты — для прозрачного сравнения моделей.</p>
+          </article>
+          <article class="adv-card">
+            <div class="adv-icon">↗</div>
+            <h3 data-i18n="adv3Title">Быстрая заявка</h3>
+            <p data-i18n="adv3Text">Кнопка «Заказать оборудование» передаёт название позиции в форму — остаётся указать контакты.</p>
+          </article>
+          <article class="adv-card">
+            <div class="adv-icon">◇</div>
+            <h3 data-i18n="adv4Title">Современный вид</h3>
+            <p data-i18n="adv4Text">Светлая премиальная среда: белый фон, синие акценты, мягкие тени и аккуратная типографика.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-i18n="catalogKicker">Каталог</div>
+          <h2 class="section-title" data-i18n="catalogTitle">Оборудование «PRO INJENEERING GROUP» ООО</h2>
+          <p class="section-sub" data-i18n="catalogSub">Фильтруйте по категории или найдите модель по названию. Заявку можно отправить в один клик из карточки товара.</p>
+        </div>
+
+        <div class="catalog-toolbar">
+          <div class="categories" id="categories"></div>
+          <div class="search-wrap">
+            <span class="icon" aria-hidden="true">⌕</span>
+            <input type="search" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Поиск оборудования..." autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="products" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-blue" id="about">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <img
+            id="aboutImg"
+            src="publicimages/p4.png"
+            alt="Оборудование «PRO INJENEERING GROUP» ООО"
+          />
+        </div>
+        <div>
+          <div class="kicker" data-i18n="aboutKicker">О нас</div>
+          <h2 class="section-title" data-i18n="aboutTitle">«PRO INJENEERING GROUP» ООО — поставщик оборудования для лабораторий и производства</h2>
+          <p class="section-sub" data-i18n="aboutSub">
+            Мы помогаем подобрать оборудование под задачи пробоподготовки, анализа, термообработки, сушки, вытяжной вентиляции и автоматизации производственных процессов.
+          </p>
+          <div class="mini-grid">
+            <div class="mini-card">
+              <strong data-i18n="about1Title">Лаборатории</strong>
+              <span data-i18n="about1Text">Печи, шкафы, прессы, оборудование для анализа и подготовки проб.</span>
+            </div>
+            <div class="mini-card">
+              <strong data-i18n="about2Title">Производство</strong>
+              <span data-i18n="about2Text">Шкафы управления, регуляторы, мельницы и промышленные решения.</span>
+            </div>
+            <div class="mini-card">
+              <strong data-i18n="about3Title">Пробоподготовка</strong>
+              <span data-i18n="about3Text">Оборудование для плавки, сушки, шихтовки и лабораторной обработки.</span>
+            </div>
+            <div class="mini-card">
+              <strong data-i18n="about4Title">Автоматизация</strong>
+              <span data-i18n="about4Text">Шкафы управления, регуляторы и элементы дистанционного управления.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="request">
+      <div class="container">
+        <div class="cta">
+          <div class="cta-inner">
+            <div>
+              <div class="kicker" data-i18n="requestKicker">Заявка</div>
+              <h2 data-i18n="requestTitle">Получить коммерческое предложение</h2>
+              <p class="lead" data-i18n="requestLead">Укажите контакты и интересующее оборудование. Email можно оставить по желанию — мы свяжемся удобным для вас способом.</p>
+            </div>
+            <div class="cta-form-column">
+              <form class="form-card" id="requestForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="fieldName" data-i18n="fieldName">Имя</label>
+                  <input id="fieldName" type="text" name="name" data-i18n-placeholder="namePlaceholder" placeholder="Ваше имя" />
+                </div>
+                <div class="field">
+                  <label for="fieldPhone" data-i18n="fieldPhone">Телефон</label>
+                  <input id="fieldPhone" type="tel" name="phone" data-i18n-placeholder="phonePlaceholder" placeholder="+998 __ ___ __ __" />
+                </div>
+                <div class="field">
+                  <label for="fieldEmail" data-i18n="fieldEmail">Email</label>
+                  <input id="fieldEmail" type="email" name="email" data-i18n-placeholder="emailPlaceholder" placeholder="Ваш email, если удобно" />
+                </div>
+                <div class="field">
+                  <label for="fieldEquipment" data-i18n="fieldEquipment">Название оборудования</label>
+                  <input id="fieldEquipment" type="text" name="equipment" data-i18n-placeholder="equipmentPlaceholder" placeholder="Например: Шаровая мельница МШ-100" />
+                </div>
+                <div class="field">
+                  <label for="fieldComment" data-i18n="fieldComment">Комментарий</label>
+                  <textarea id="fieldComment" name="comment" data-i18n-placeholder="commentPlaceholder" placeholder="Дополнительные пожелания"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="submitBtn">Отправить заявку</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo-row">
+          <img id="logoFooter" src="publicimages/logo.png" alt="" />
+        </div>
+        <p class="footer-company-name">
+          <span class="footer-brand-line1" id="footerBrandLine1">PRO INJENEERING GROUP</span>
+          <span class="footer-brand-line2" id="footerBrandLine2">ООО</span>
+        </p>
+        <p class="footer-tagline" data-i18n="footerText">
+          «PRO INJENEERING GROUP» ООО — промышленное и лабораторное оборудование для точных процессов.
+        </p>
+        <h3 class="footer-contact-title" data-i18n="contactsTitle">Свяжитесь с нами</h3>
+        <p class="footer-contact-sub" data-i18n="contactsSub">Оставьте заявку или свяжитесь напрямую — мы поможем подобрать оборудование под ваши задачи.</p>
+      </div>
+      <div class="contact-block">
+        <ul class="footer-contact-list">
+          <li><span data-i18n="emailLabel">E-mail</span>: <a href="mailto:proinjeneeringg@mail.ru" id="contactEmailVal">proinjeneeringg@mail.ru</a></li>
+          <li><span data-i18n="phoneLabel">Телефон</span>: <a href="tel:+998994145500" id="contactPhoneVal" data-i18n="phoneValue">+998 99 414 55 00</a></li>
+          <li><span data-i18n="directorLabel">Директор</span>: <span id="contactDirectorVal">C.Т.Хусенов</span></li>
+          <li><span data-i18n="postalIndexLabel">Индекс</span>: <span id="contactIndexVal" data-i18n="postalIndexValue">210100</span></li>
+          <li><span data-i18n="addressLabel">Адрес</span>: <span id="contactAddressVal" class="address-line" data-i18n="addressValue">Узбекистан Самарканд вилояти, ПАХТАЧИ ТУМАНИ, Obodon MFY, 1-Oktepa massiv ko‘chasi, 228-uy</span></li>
+        </ul>
+        <div class="work-time">
+          <strong data-i18n="workTimeTitle">Режим работы</strong>
+          <span data-i18n="workTimeText">Пн–Сб: 09:00–18:00, Вс: выходной</span>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="#request" data-i18n="leaveRequest">Оставить заявку</a>
+    </div>
+  </footer>
+
+  <script src="js/site-storage.js"></script>
+  <script>
+    (function () {
+      try {
+        var legacyLangKey = "\u006f\u0072\u0074\u0061\u006c\u0061\u0062" + "Lang";
+        var oldLang = localStorage.getItem(legacyLangKey);
+        if (oldLang && !localStorage.getItem("siteLang")) {
+          localStorage.setItem("siteLang", oldLang);
+          localStorage.removeItem(legacyLangKey);
+        }
+      } catch (e) {
+        /* ignore */
+      }
+
+      var translations = {
+        ru: {
+          navCatalog: "Каталог",
+          navAdvantages: "Преимущества",
+          navAbout: "О нас",
+          navRequest: "Заявка",
+          navContacts: "Контакты",
+          leaveRequest: "Оставить заявку",
+          brandLine1: "PRO INJENEERING GROUP",
+          brandLine2: "ООО",
+          brandAria: "PRO INJENEERING GROUP, общество с ограниченной ответственностью",
+          logoAlt: "Логотип PRO INJENEERING GROUP",
+          aboutImageAlt: "Оборудование «PRO INJENEERING GROUP» ООО",
+          heroTitle: "Промышленное и лабораторное оборудование для точных процессов",
+          heroLead: "«PRO INJENEERING GROUP» ООО поставляет печи, сушильные шкафы, вытяжные шкафы, мельницы, шкафы управления и оборудование для пробоподготовки.",
+          heroCatalogBtn: "Смотреть каталог",
+          heroConsultBtn: "Получить консультацию",
+          stat1: "16+",
+          stat1Text: "позиций оборудования",
+          stat2: "B2B",
+          stat2Text: "для промышленности",
+          stat3: "24/7",
+          stat3Text: "приём заявок",
+          heroCaption: "Оборудование «PRO INJENEERING GROUP» ООО в каталоге",
+          advantagesKicker: "Преимущества",
+          advantagesTitle: "Почему выбирают «PRO INJENEERING GROUP» ООО",
+          advantagesSub: "Корпоративный B2B-подход: доверие, техническая детализация и быстрый переход к заявке.",
+          adv1Title: "Надёжный подбор",
+          adv1Text: "Сопоставляем вашу технологическую задачу с характеристиками оборудования и режимами эксплуатации.",
+          adv2Title: "Технический подход",
+          adv2Text: "В карточках — ключевые параметры: температура, мощность, габариты — для прозрачного сравнения моделей.",
+          adv3Title: "Быстрая заявка",
+          adv3Text: "Кнопка «Заказать оборудование» передаёт название позиции в форму — остаётся указать контакты.",
+          adv4Title: "Современный вид",
+          adv4Text: "Светлая премиальная среда: белый фон, синие акценты, мягкие тени и аккуратная типографика.",
+          catalogKicker: "Каталог",
+          catalogTitle: "Оборудование «PRO INJENEERING GROUP» ООО",
+          catalogSub: "Фильтруйте по категории или найдите модель по названию. Заявку можно отправить в один клик из карточки товара.",
+          searchPlaceholder: "Поиск оборудования...",
+          orderBtn: "Заказать оборудование",
+          catAll: "Все",
+          catFurnaces: "Печи",
+          catDryers: "Сушильные шкафы",
+          catFume: "Вытяжные шкафы",
+          catAutomation: "Автоматизация",
+          catAssay: "Пробирный анализ",
+          catGrinding: "Измельчение",
+          catLab: "Лабораторное оборудование",
+          aboutKicker: "О нас",
+          aboutTitle: "«PRO INJENEERING GROUP» ООО — поставщик оборудования для лабораторий и производства",
+          aboutSub: "Мы помогаем подобрать оборудование под задачи пробоподготовки, анализа, термообработки, сушки, вытяжной вентиляции и автоматизации производственных процессов.",
+          about1Title: "Лаборатории",
+          about1Text: "Печи, шкафы, прессы, оборудование для анализа и подготовки проб.",
+          about2Title: "Производство",
+          about2Text: "Шкафы управления, регуляторы, мельницы и промышленные решения.",
+          about3Title: "Пробоподготовка",
+          about3Text: "Оборудование для плавки, сушки, шихтовки и лабораторной обработки.",
+          about4Title: "Автоматизация",
+          about4Text: "Шкафы управления, регуляторы и элементы дистанционного управления.",
+          requestKicker: "Заявка",
+          requestTitle: "Получить коммерческое предложение",
+          requestLead: "Укажите контакты и интересующее оборудование. Email можно оставить по желанию — мы свяжемся удобным для вас способом.",
+          fieldName: "Имя",
+          fieldPhone: "Телефон",
+          fieldEmail: "Email",
+          emailPlaceholder: "Ваш email, если удобно",
+          fieldEquipment: "Название оборудования",
+          fieldComment: "Комментарий",
+          namePlaceholder: "Ваше имя",
+          phonePlaceholder: "+998 __ ___ __ __",
+          equipmentPlaceholder: "Например: Шаровая мельница МШ-100",
+          commentPlaceholder: "Дополнительные пожелания",
+          submitBtn: "Отправить заявку",
+          contactsTitle: "Свяжитесь с нами",
+          contactsSub: "Оставьте заявку через форму на странице. Полные контактные данные компании — в подвале сайта внизу.",
+          phoneLabel: "Телефон",
+          phoneValue: "+998 99 414 55 00",
+          emailLabel: "E-mail",
+          directorLabel: "Директор",
+          postalIndexLabel: "Индекс",
+          postalIndexValue: "210100",
+          addressLabel: "Адрес",
+          addressValue:
+            "Узбекистан Самарканд вилояти, ПАХТАЧИ ТУМАНИ, Obodon MFY, 1-Oktepa massiv ko‘chasi, 228-uy",
+          workTimeTitle: "Режим работы",
+          workTimeText: "Пн–Сб: 09:00–18:00, Вс: выходной",
+          footerText: "«PRO INJENEERING GROUP» ООО — промышленное и лабораторное оборудование для точных процессов.",
+          fillAlert: "Заполните имя, телефон и название оборудования.",
+          successAlert: "Заявка подготовлена. Следующий шаг — подключить отправку в Telegram или на email.",
+          notFound: "Ничего не найдено. Попробуйте изменить категорию или поисковый запрос.",
+          missingPhoto: "Фото не найдено",
+          pageTitle: "«PRO INJENEERING GROUP» ООО — промышленное и лабораторное оборудование",
+          pageDesc:
+            "«PRO INJENEERING GROUP» ООО — промышленное и лабораторное оборудование для точных процессов. Печи, сушильные шкафы, вытяжные шкафы, мельницы и оборудование для пробоподготовки."
+        },
+        en: {
+          navCatalog: "Catalog",
+          navAdvantages: "Advantages",
+          navAbout: "About us",
+          navRequest: "Request",
+          navContacts: "Contacts",
+          leaveRequest: "Send request",
+          brandLine1: "PRO INJENEERING GROUP",
+          brandLine2: "LLC",
+          brandAria: "PRO INJENEERING GROUP, limited liability company",
+          logoAlt: "PRO INJENEERING GROUP logo",
+          aboutImageAlt: "PRO INJENEERING GROUP LLC equipment",
+          heroTitle: "Industrial and laboratory equipment for precise processes",
+          heroLead: "PRO INJENEERING GROUP LLC supplies furnaces, drying cabinets, fume hoods, mills, control cabinets and sample preparation equipment.",
+          heroCatalogBtn: "View catalog",
+          heroConsultBtn: "Get consultation",
+          stat1: "16+",
+          stat1Text: "equipment items",
+          stat2: "B2B",
+          stat2Text: "for industry",
+          stat3: "24/7",
+          stat3Text: "request intake",
+          heroCaption: "PRO INJENEERING GROUP LLC equipment in the catalog",
+          advantagesKicker: "Advantages",
+          advantagesTitle: "Why choose PRO INJENEERING GROUP LLC",
+          advantagesSub: "A corporate B2B approach: trust, technical details and a fast path to request.",
+          adv1Title: "Reliable selection",
+          adv1Text: "We match your technological task with equipment specifications and operating modes.",
+          adv2Title: "Technical approach",
+          adv2Text: "Product cards include key parameters: temperature, power and dimensions for clear comparison.",
+          adv3Title: "Fast request",
+          adv3Text: "The “Order equipment” button transfers the selected item name into the request form.",
+          adv4Title: "Modern look",
+          adv4Text: "A bright premium environment: white background, blue accents, soft shadows and clean typography.",
+          catalogKicker: "Catalog",
+          catalogTitle: "PRO INJENEERING GROUP LLC equipment",
+          catalogSub: "Filter by category or find a model by name. You can send a request directly from a product card.",
+          searchPlaceholder: "Search equipment...",
+          orderBtn: "Order equipment",
+          catAll: "All",
+          catFurnaces: "Furnaces",
+          catDryers: "Drying cabinets",
+          catFume: "Fume hoods",
+          catAutomation: "Automation",
+          catAssay: "Assay analysis",
+          catGrinding: "Grinding",
+          catLab: "Laboratory equipment",
+          aboutKicker: "About us",
+          aboutTitle: "PRO INJENEERING GROUP LLC — supplier of equipment for laboratories and production",
+          aboutSub: "We help select equipment for sample preparation, analysis, heat treatment, drying, fume extraction and automation of production processes.",
+          about1Title: "Laboratories",
+          about1Text: "Furnaces, cabinets, presses, analysis and sample preparation equipment.",
+          about2Title: "Production",
+          about2Text: "Control cabinets, regulators, mills and industrial solutions.",
+          about3Title: "Sample preparation",
+          about3Text: "Equipment for melting, drying, charge preparation and laboratory processing.",
+          about4Title: "Automation",
+          about4Text: "Control cabinets, regulators and remote-control elements.",
+          requestKicker: "Request",
+          requestTitle: "Get a commercial offer",
+          requestLead: "Leave your contacts and the equipment you are interested in. Email is optional — we will contact you in the most convenient way.",
+          fieldName: "Name",
+          fieldPhone: "Phone",
+          fieldEmail: "Email",
+          emailPlaceholder: "Your email, if convenient",
+          fieldEquipment: "Equipment name",
+          fieldComment: "Comment",
+          namePlaceholder: "Your name",
+          phonePlaceholder: "+998 __ ___ __ __",
+          equipmentPlaceholder: "For example: Ball mill MSH-100",
+          commentPlaceholder: "Additional details",
+          submitBtn: "Send request",
+          contactsTitle: "Contact us",
+          contactsSub: "Send a request using the form on this page. Full company contact details are in the site footer below.",
+          phoneLabel: "Phone",
+          phoneValue: "+998 99 414 55 00",
+          emailLabel: "E-mail",
+          directorLabel: "Director",
+          postalIndexLabel: "Postal code",
+          postalIndexValue: "210100",
+          addressLabel: "Address",
+          addressValue:
+            "Uzbekistan, Samarkand Region, Pakhtachi District, Obodon MFY, 1-Oktepa massiv ko‘chasi, 228-uy",
+          workTimeTitle: "Working hours",
+          workTimeText: "Mon–Sat: 09:00–18:00, Sun: closed",
+          footerText: "PRO INJENEERING GROUP LLC — industrial and laboratory equipment for precise processes.",
+          fillAlert: "Please fill in your name, phone and equipment name.",
+          successAlert: "The request is prepared. Next step — connect sending to Telegram or email.",
+          notFound: "Nothing found. Try changing the category or search query.",
+          missingPhoto: "Photo not found",
+          pageTitle: "PRO INJENEERING GROUP LLC — industrial and laboratory equipment",
+          pageDesc:
+            "PRO INJENEERING GROUP LLC — industrial and laboratory equipment for precise processes. Furnaces, drying cabinets, fume hoods, mills and sample preparation equipment."
+        },
+        uz: {
+          navCatalog: "Katalog",
+          navAdvantages: "Afzalliklar",
+          navAbout: "Biz haqimizda",
+          navRequest: "Ariza",
+          navContacts: "Kontaktlar",
+          leaveRequest: "Ariza qoldirish",
+          brandLine1: "PRO INJENEERING GROUP",
+          brandLine2: "MCHJ",
+          brandAria: "PRO INJENEERING GROUP MCHJ",
+          logoAlt: "PRO INJENEERING GROUP logotipi",
+          aboutImageAlt: "«PRO INJENEERING GROUP» MCHJ uskunalari",
+          heroTitle: "Aniq jarayonlar uchun sanoat va laboratoriya uskunalari",
+          heroLead: "«PRO INJENEERING GROUP» MCHJ pechlar, quritish shkaflari, tortma shkaflar, tegirmonlar, boshqaruv shkaflari va namunani tayyorlash uskunalarini yetkazib beradi.",
+          heroCatalogBtn: "Katalogni ko‘rish",
+          heroConsultBtn: "Maslahat olish",
+          stat1: "16+",
+          stat1Text: "uskuna pozitsiyasi",
+          stat2: "B2B",
+          stat2Text: "sanoat uchun",
+          stat3: "24/7",
+          stat3Text: "arizalarni qabul qilish",
+          heroCaption: "Katalogdagi «PRO INJENEERING GROUP» MCHJ uskunalari",
+          advantagesKicker: "Afzalliklar",
+          advantagesTitle: "Nega «PRO INJENEERING GROUP» MCHJ tanlanadi",
+          advantagesSub: "Korporativ B2B yondashuv: ishonch, texnik tafsilotlar va arizaga tez o‘tish.",
+          adv1Title: "Ishonchli tanlov",
+          adv1Text: "Texnologik vazifangizni uskuna xususiyatlari va ishlash rejimlari bilan moslashtiramiz.",
+          adv2Title: "Texnik yondashuv",
+          adv2Text: "Mahsulot kartalarida asosiy parametrlar: harorat, quvvat va o‘lchamlar ko‘rsatiladi.",
+          adv3Title: "Tezkor ariza",
+          adv3Text: "“Uskunani buyurtma qilish” tugmasi tanlangan mahsulot nomini ariza formasiga avtomatik qo‘yadi.",
+          adv4Title: "Zamonaviy ko‘rinish",
+          adv4Text: "Yorqin premium muhit: oq fon, ko‘k aksentlar, yumshoq soyalar va toza tipografika.",
+          catalogKicker: "Katalog",
+          catalogTitle: "«PRO INJENEERING GROUP» MCHJ uskunalari",
+          catalogSub: "Kategoriya bo‘yicha saralang yoki modelni nomi orqali toping. Arizani mahsulot kartasidan yuborish mumkin.",
+          searchPlaceholder: "Uskunani qidirish...",
+          orderBtn: "Uskunani buyurtma qilish",
+          catAll: "Hammasi",
+          catFurnaces: "Pechlar",
+          catDryers: "Quritish shkaflari",
+          catFume: "Tortma shkaflar",
+          catAutomation: "Avtomatlashtirish",
+          catAssay: "Probir tahlil",
+          catGrinding: "Maydalash",
+          catLab: "Laboratoriya uskunalari",
+          aboutKicker: "Biz haqimizda",
+          aboutTitle: "«PRO INJENEERING GROUP» MCHJ — laboratoriya va ishlab chiqarish uchun uskunalar yetkazib beruvchi",
+          aboutSub: "Biz namunani tayyorlash, tahlil, termik ishlov berish, quritish, tortma ventilyatsiya va ishlab chiqarish jarayonlarini avtomatlashtirish uchun uskunalar tanlashda yordam beramiz.",
+          about1Title: "Laboratoriyalar",
+          about1Text: "Pechlar, shkaflar, presslar, tahlil va namunani tayyorlash uskunalari.",
+          about2Title: "Ishlab chiqarish",
+          about2Text: "Boshqaruv shkaflari, regulyatorlar, tegirmonlar va sanoat yechimlari.",
+          about3Title: "Namuna tayyorlash",
+          about3Text: "Eritish, quritish, shixta tayyorlash va laboratoriya ishlovi uchun uskunalar.",
+          about4Title: "Avtomatlashtirish",
+          about4Text: "Boshqaruv shkaflari, regulyatorlar va masofadan boshqarish elementlari.",
+          requestKicker: "Ariza",
+          requestTitle: "Tijorat taklifini olish",
+          requestLead: "Kontaktlaringizni va kerakli uskunani ko‘rsating. Email ixtiyoriy — sizga qulay usulda bog‘lanamiz.",
+          fieldName: "Ism",
+          fieldPhone: "Telefon",
+          fieldEmail: "Email",
+          emailPlaceholder: "Emailingiz, agar qulay bo‘lsa",
+          fieldEquipment: "Uskuna nomi",
+          fieldComment: "Izoh",
+          namePlaceholder: "Ismingiz",
+          phonePlaceholder: "+998 __ ___ __ __",
+          equipmentPlaceholder: "Masalan: MSH-100 sharli tegirmon",
+          commentPlaceholder: "Qo‘shimcha ma’lumot",
+          submitBtn: "Ariza yuborish",
+          contactsTitle: "Biz bilan bog‘laning",
+          contactsSub: "Arizani sahifadagi forma orqali qoldiring. To‘liq kontakt ma’lumotlari sayt pastki qismida.",
+          phoneLabel: "Telefon",
+          phoneValue: "+998 99 414 55 00",
+          emailLabel: "E-mail",
+          directorLabel: "Direktor",
+          postalIndexLabel: "Indeks",
+          postalIndexValue: "210100",
+          addressLabel: "Manzil",
+          addressValue:
+            "Oʻzbekiston Samarqand viloyati, PAXTACHI TUMANI, Obodon MFY, 1-Oktepa massiv koʻchasi, 228-uy",
+          workTimeTitle: "Ish vaqti",
+          workTimeText: "Du–Shanba: 09:00–18:00, Yakshanba: dam olish",
+          footerText: "«PRO INJENEERING GROUP» MCHJ — aniq jarayonlar uchun sanoat va laboratoriya uskunalari.",
+          fillAlert: "Ism, telefon va uskuna nomini to‘ldiring.",
+          successAlert: "Ariza tayyorlandi. Keyingi qadam — Telegram yoki emailga yuborishni ulash.",
+          notFound: "Hech narsa topilmadi. Kategoriya yoki qidiruv so‘rovini o‘zgartirib ko‘ring.",
+          missingPhoto: "Foto topilmadi",
+          pageTitle: "«PRO INJENEERING GROUP» MCHJ — sanoat va laboratoriya uskunalari",
+          pageDesc:
+            "«PRO INJENEERING GROUP» MCHJ — aniq jarayonlar uchun sanoat va laboratoriya uskunalari. Pechlar, quritish va tortma shkaflari, tegirmonlar va namunani tayyorlash."
+        }
+      };
+
+      var CATEGORY_ORDER = [
+        { key: "all", tkey: "catAll" },
+        { key: "furnaces", tkey: "catFurnaces" },
+        { key: "dryers", tkey: "catDryers" },
+        { key: "fume", tkey: "catFume" },
+        { key: "automation", tkey: "catAutomation" },
+        { key: "assay", tkey: "catAssay" },
+        { key: "grinding", tkey: "catGrinding" },
+        { key: "lab", tkey: "catLab" }
+      ];
+
+      var currentLang = localStorage.getItem("siteLang") || "ru";
+
+      function t(key) {
+        var pack = translations[currentLang];
+        return pack && pack[key] ? pack[key] : key;
+      }
+
+      function applyLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem("siteLang", lang);
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+
+        document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n-placeholder");
+          if (translations[lang] && translations[lang][key]) {
+            el.setAttribute("placeholder", translations[lang][key]);
+          }
+        });
+
+        document.querySelectorAll(".lang-btn").forEach(function (btn) {
+          btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+        });
+
+        var titleEl = document.getElementById("pageTitleEl");
+        if (titleEl && translations[lang].pageTitle) {
+          titleEl.textContent = translations[lang].pageTitle;
+        }
+        var metaEl = document.getElementById("metaDescriptionEl");
+        if (metaEl && translations[lang].pageDesc) {
+          metaEl.setAttribute("content", translations[lang].pageDesc);
+        }
+
+        var bl1 = document.getElementById("brandLine1");
+        var bl2 = document.getElementById("brandLine2");
+        if (bl1 && translations[lang].brandLine1) bl1.textContent = translations[lang].brandLine1;
+        if (bl2 && translations[lang].brandLine2) bl2.textContent = translations[lang].brandLine2;
+        var fb1 = document.getElementById("footerBrandLine1");
+        var fb2 = document.getElementById("footerBrandLine2");
+        if (fb1 && translations[lang].brandLine1) fb1.textContent = translations[lang].brandLine1;
+        if (fb2 && translations[lang].brandLine2) fb2.textContent = translations[lang].brandLine2;
+        var brandLink = document.getElementById("brandHomeLink");
+        if (brandLink && translations[lang].brandAria) {
+          brandLink.setAttribute("aria-label", translations[lang].brandAria);
+        }
+        var logoHeader = document.getElementById("logoHeader");
+        if (logoHeader && translations[lang].logoAlt) {
+          logoHeader.setAttribute("alt", translations[lang].logoAlt);
+        }
+        var logoFooter = document.getElementById("logoFooter");
+        if (logoFooter && translations[lang].logoAlt) {
+          logoFooter.setAttribute("alt", translations[lang].logoAlt);
+        }
+        var aboutImg = document.getElementById("aboutImg");
+        if (aboutImg && translations[lang].aboutImageAlt) {
+          aboutImg.setAttribute("alt", translations[lang].aboutImageAlt);
+        }
+
+        renderCategories();
+        renderProducts();
+        applyContactOverrides();
+      }
+
+      var MOCK_PRODUCTS = [
+        {
+          name: "Вальцы ковочные специальные ВЭМ-К",
+          categoryKey: "assay",
+          image: "publicimages/p1.png",
+          description: "Оборудование для раскатки корольков, полученных в результате пробирной плавки.",
+          specs: ["Диаметр валков: 58 мм", "Мощность: 1,1 кВт", "Масса: до 120 кг"]
+        },
+        {
+          name: "Вальцы ковочные специальные ВЭМ-С",
+          categoryKey: "assay",
+          image: "publicimages/p2.png",
+          description: "Предназначены для изготовления свинцовой фольги из металлического свинца марки «ХЧ».",
+          specs: ["Диаметр валов: 58 мм", "Макс. развод валков: 6 мм", "Масса: до 130 кг"]
+        },
+        {
+          name: "Пресс для капелей СГК-9.13.У",
+          categoryKey: "lab",
+          image: "publicimages/p3.png",
+          description: "Пресс для изготовления капелей из магнезитового, цементного и костного сырья.",
+          specs: ["До 9 капелей за цикл", "Давление: до 200 МПа", "Цикл: до 16 сек"]
+        },
+        {
+          name: "Промышленная печь 1100",
+          categoryKey: "furnaces",
+          image: "publicimages/p4.png",
+          description: "Лабораторная печь для аналитических работ и термической обработки материалов до 1100 °C.",
+          specs: ["Температура: до 1100 °C", "Керамический муфель", "Вытяжная труба"]
+        },
+        {
+          name: "Шкаф вытяжной печной ШВРП-1,6.0.9",
+          categoryKey: "fume",
+          image: "publicimages/p5.png",
+          description: "Комплекс для разварки золотосеребряных сплавов и прокаливания золотых пластин.",
+          specs: ["Разварочная плита: 4 кВт", "Прокалочная плита: 3 кВт", "Габариты: 1600×860×1970 мм"]
+        },
+        {
+          name: "Тиристорный регулятор",
+          categoryKey: "automation",
+          image: "publicimages/p6.png",
+          description: "Преобразователь для регулирования напряжения и обеспечения заданной температуры электропечей.",
+          specs: ["Плавный старт", "Трёхфазное напряжение", "Для электропечей"]
+        },
+        {
+          name: "Электропечь лабораторная ЭПШТ-24",
+          categoryKey: "furnaces",
+          image: "publicimages/p7.png",
+          description: "Шахтная тигельная электропечь на 24 тигля для плавки проб минерального сырья.",
+          specs: ["24 тигля", "Температура: до 1200 °C", "Мощность: до 40 кВт"]
+        },
+        {
+          name: "Электрошкаф для сушки проб АЭСШ-10.8.12",
+          categoryKey: "dryers",
+          image: "publicimages/p8.png",
+          description: "Шкаф для сушки влажного сырья, проб, промпродуктов и шламов при температуре 110 °C.",
+          specs: ["Мощность: до 14 кВт", "20 противней", "Камера: 1000×800×1200 мм"]
+        },
+        {
+          name: "Шкаф сушильный ALSTO 2M3",
+          categoryKey: "dryers",
+          image: "publicimages/p9.png",
+          description: "Автоматизированный электрошкаф для сушки проб с ПИД-регулированием Alsto M2.",
+          specs: ["Температура: до 120 °C", "3 фазы 380–400 V", "Мощность: 12 кВт"]
+        },
+        {
+          name: "Сушильный шкаф 58-67-75-80-120/350",
+          categoryKey: "dryers",
+          image: "publicimages/p10.png",
+          description: "Универсальный шкаф с естественной воздушной конвекцией для сушки и термообработки.",
+          specs: ["Температура: 50–350 °C", "Объём: 58–120 л", "Мощность: 3 кВт"]
+        },
+        {
+          name: "Шкаф управления печью реактивации угля ШУ",
+          categoryKey: "automation",
+          image: "publicimages/p11.png",
+          description: "Шкаф автоматизации для управления технологическим процессом печи реактивации угля.",
+          specs: ["Защиты и блокировки", "Контроль температуры", "Регулирование оборотов барабана"]
+        },
+        {
+          name: "Шкаф вытяжной для шихтовки проб ШВШ",
+          categoryKey: "fume",
+          image: "publicimages/p12.png",
+          description: "Шкаф для приготовления шихты из химических реагентов и защиты персонала от пылевыделений.",
+          specs: ["Мощность: до 1,5 кВт", "Масса: до 290 кг", "Столешница: керамогранит"]
+        },
+        {
+          name: "Шкаф вытяжной ЛАБ-1800 ШВ-Н",
+          categoryKey: "fume",
+          image: "publicimages/p13.png",
+          description: "Вытяжной шкаф для работы с химически агрессивными, летучими и токсичными реагентами.",
+          specs: ["Габариты: 1838×726×2100 мм", "Рабочая зона: 1800×600×1070 мм", "Керамогранит"]
+        },
+        {
+          name: "Муфельная печь",
+          categoryKey: "furnaces",
+          image: "publicimages/p14.png",
+          description: "Универсальная лабораторная электропечь с керамической камерой для нагрева, обжига и прокалки.",
+          specs: ["Объём: 7,2–22 л", "Температура: до 1100 °C", "Керамическая камера"]
+        },
+        {
+          name: "Нагревательная плита с выносным блоком управления",
+          categoryKey: "lab",
+          image: "publicimages/p15.png",
+          description: "Плита для безопасного нагрева лабораторной посуды большого объёма и серийной пробоподготовки.",
+          specs: ["Температура: до 350 °C", "Размер: 400×600 мм", "Вес: 30 кг"]
+        },
+        {
+          name: "Шаровая мельница МШ-100",
+          categoryKey: "grinding",
+          image: "publicimages/p16.png",
+          description: "Шаровая мельница с объёмом барабана 100 литров и производительностью до 40 кг/час.",
+          specs: ["Объём: 100 л", "Мощность: до 3,5 кВт", "Масса: ~485 кг"]
+        }
+      ];
+
+      var PRODUCT_I18N = [
+        { en: { name: "VEM-K special forging rolls", description: "Equipment for rolling cornets after cupellation.", specs: ["Roll diameter: 58 mm", "Power: 1.1 kW", "Weight: up to 120 kg"] }, uz: { name: "VEM-K maxsus kovlash valtslari", description: "Probir eritishidan keyin olingan kornetlarni yoyish uchun uskuna.", specs: ["Val diametri: 58 mm", "Quvvat: 1,1 kVt", "Massa: 120 kg gacha"] } },
+        { en: { name: "VEM-S special forging rolls", description: "Designed to produce lead foil from “KhCh” grade metallic lead.", specs: ["Roll diameter: 58 mm", "Max roll gap: 6 mm", "Weight: up to 130 kg"] }, uz: { name: "VEM-S maxsus kovlash valtslari", description: "«XCh» markali metall qo‘rg‘oshundan folga tayyorlash uchun.", specs: ["Val diametri: 58 mm", "Maks. val oralig‘i: 6 mm", "Massa: 130 kg gacha"] } },
+        { en: { name: "SGK-9.13.U pellet press", description: "Press for pellets from magnesite, cement and bone materials.", specs: ["Up to 9 pellets per cycle", "Pressure: up to 200 MPa", "Cycle: up to 16 s"] }, uz: { name: "SGK-9.13.U kapsula pressi", description: "Magnesit, sement va suyak xomashiyasidan kapsulalar uchun press.", specs: ["Sikl uchun 9 tagacha kapsula", "Bosim: 200 MPa gacha", "Sikl: 16 s gacha"] } },
+        { en: { name: "Industrial furnace 1100", description: "Laboratory furnace for analytical work and heat treatment up to 1100 °C.", specs: ["Temperature: up to 1100 °C", "Ceramic muffle", "Exhaust stack"] }, uz: { name: "Sanoat pechi 1100", description: "1100 °C gacha tahlil va termik ishlov uchun laboratoriya pechi.", specs: ["Harorat: 1100 °C gacha", "Keramik muffel", "Chiqindi trubasi"] } },
+        { en: { name: "Furnace fume hood SHVRP-1.6.0.9", description: "System for parting gold-silver alloys and annealing gold plates.", specs: ["Parting plate: 4 kW", "Annealing plate: 3 kW", "Dimensions: 1600×860×1970 mm"] }, uz: { name: "Pech tortma shkafi SHVRP-1,6.0,9", description: "Oltin-kumush qotishmalarini ajratish va oltin plitalarni kuydirish kompleksi.", specs: ["Ajratish plitasi: 4 kVt", "Kuydirish plitasi: 3 kVt", "O‘lchamlar: 1600×860×1970 mm"] } },
+        { en: { name: "Thyristor regulator", description: "Converter for voltage regulation and set temperature of electric furnaces.", specs: ["Soft start", "Three-phase supply", "For electric furnaces"] }, uz: { name: "Tiristor regulyatori", description: "Elektro pechlar uchun kuchlanish va haroratni boshqarish.", specs: ["Yumshoq ishga tushirish", "Uch fazali kuchlanish", "Elektro pechlar uchun"] } },
+        { en: { name: "Laboratory electric furnace EPSHT-24", description: "Shaft crucible furnace with 24 crucibles for melting mineral samples.", specs: ["24 crucibles", "Temperature: up to 1200 °C", "Power: up to 40 kW"] }, uz: { name: "Laboratoriya elektro pechi EPSHT-24", description: "24 tig‘li shaft muffel pech — mineral namunalar eritish.", specs: ["24 ta tig‘", "Harorat: 1200 °C gacha", "Quvvat: 40 kVt gacha"] } },
+        { en: { name: "Sample drying cabinet AESSH-10.8.12", description: "Cabinet for drying wet feed, samples and sludge at 110 °C.", specs: ["Power: up to 14 kW", "20 trays", "Chamber: 1000×800×1200 mm"] }, uz: { name: "Namuna quritish shkafi AESSH-10.8.12", description: "110 °C da namuna va shlam quritish shkafi.", specs: ["Quvvat: 14 kVt gacha", "20 ta list", "Kamera: 1000×800×1200 mm"] } },
+        { en: { name: "ALSTO 2M3 drying cabinet", description: "Automated drying cabinet with Alsto M2 PID control.", specs: ["Temperature: up to 120 °C", "3-phase 380–400 V", "Power: 12 kW"] }, uz: { name: "ALSTO 2M3 quritish shkafi", description: "Alsto M2 PID bilan avtomatlashtirilgan quritish shkafi.", specs: ["Harorat: 120 °C gacha", "3 fazali 380–400 V", "Quvvat: 12 kVt"] } },
+        { en: { name: "Drying cabinet 58-67-75-80-120/350", description: "Universal cabinet with natural convection for drying and heat treatment.", specs: ["Temperature: 50–350 °C", "Volume: 58–120 L", "Power: 3 kW"] }, uz: { name: "Quritish shkafi 58-67-75-80-120/350", description: "Tabiiy konveksiya bilan quritish va termik ishlov.", specs: ["Harorat: 50–350 °C", "Hajm: 58–120 l", "Quvvat: 3 kVt"] } },
+        { en: { name: "Coal reactivation furnace control cabinet SHU", description: "Automation cabinet for coal reactivation furnace process.", specs: ["Protections and interlocks", "Temperature control", "Drum speed control"] }, uz: { name: "Ko‘mir reaktivatsiya pechi boshqaruv shkafi SHU", description: "Ko‘mir reaktivatsiya texnologiyasini boshqarish shkafi.", specs: ["Himoya va blokirovkalar", "Harorat nazorati", "Baraban aylanishi"] } },
+        { en: { name: "Sample charge preparation fume hood SHVSH", description: "Hood for charge preparation from reagents and dust protection.", specs: ["Power: up to 1.5 kW", "Weight: up to 290 kg", "Worktop: porcelain stoneware"] }, uz: { name: "Shixta tayyorlash tortma shkafi SHVSH", description: "Reagentlar bilan shixta va changdan himoya.", specs: ["Quvvat: 1,5 kVt gacha", "Massa: 290 kg gacha", "Stol: keramogranit"] } },
+        { en: { name: "LAB-1800 exhaust hood SHV-N", description: "Hood for aggressive, volatile and toxic reagents.", specs: ["Dimensions: 1838×726×2100 mm", "Work zone: 1800×600×1070 mm", "Porcelain stoneware"] }, uz: { name: "LAB-1800 tortma shkafi SHV-N", description: "Aggressiv va zaharli reagentlar bilan ishlash uchun.", specs: ["O‘lchamlar: 1838×726×2100 mm", "Ish zonasi: 1800×600×1070 mm", "Keramogranit"] } },
+        { en: { name: "Muffle furnace", description: "Universal laboratory furnace with ceramic chamber for heating and calcination.", specs: ["Volume: 7.2–22 L", "Temperature: up to 1100 °C", "Ceramic chamber"] }, uz: { name: "Muffel pechi", description: "Keramik kamera bilan universal laboratoriya pechi.", specs: ["Hajm: 7,2–22 l", "Harorat: 1100 °C gacha", "Keramik kamera"] } },
+        { en: { name: "Heating plate with remote control", description: "Plate for safe heating of large laboratory glassware and batch prep.", specs: ["Temperature: up to 350 °C", "Size: 400×600 mm", "Weight: 30 kg"] }, uz: { name: "Boshqaruv bloki bilan isitish plitasi", description: "Katta idishlarni xavfsiz isitish va seriya tayyorlash.", specs: ["Harorat: 350 °C gacha", "O‘lcham: 400×600 mm", "Massa: 30 kg"] } },
+        { en: { name: "Ball mill MSH-100", description: "Ball mill with 100 L drum volume, up to 40 kg/h throughput.", specs: ["Volume: 100 L", "Power: up to 3.5 kW", "Weight: ~485 kg"] }, uz: { name: "Sharli tegirmon MSH-100", description: "100 l baraban, 40 kg/soat gacha ishlab chiqarish.", specs: ["Hajm: 100 l", "Quvvat: 3,5 kVt gacha", "Massa: ~485 kg"] } }
+      ];
+
+      function categoryLabelForKey(catKey) {
+        var map = {
+          furnaces: "catFurnaces",
+          dryers: "catDryers",
+          fume: "catFume",
+          automation: "catAutomation",
+          assay: "catAssay",
+          grinding: "catGrinding",
+          lab: "catLab"
+        };
+        return t(map[catKey] || "catAll");
+      }
+
+      function productStrings(p) {
+        var i = MOCK_PRODUCTS.indexOf(p);
+        if (currentLang === "ru" || i < 0) {
+          return { name: p.name, description: p.description, specs: p.specs };
+        }
+        var loc = PRODUCT_I18N[i];
+        if (!loc) {
+          return { name: p.name, description: p.description, specs: p.specs };
+        }
+        return currentLang === "en" ? loc.en : loc.uz;
+      }
+
+      function productSearchBlob(p) {
+        var i = MOCK_PRODUCTS.indexOf(p);
+        var ru = (p.name + " " + p.description + " " + (p.specs || []).join(" ")).toLowerCase();
+        if (i < 0) return ru;
+        var loc = PRODUCT_I18N[i];
+        if (!loc) return ru;
+        var e = (loc.en.name + " " + loc.en.description + " " + loc.en.specs.join(" ")).toLowerCase();
+        var u = (loc.uz.name + " " + loc.uz.description + " " + loc.uz.specs.join(" ")).toLowerCase();
+        return ru + " " + e + " " + u;
+      }
+
+      function specsLinesFromAdminString(specsStr) {
+        return String(specsStr || "")
+          .split(/\r?\n/)
+          .map(function (s) {
+            return s.trim();
+          })
+          .filter(Boolean);
+      }
+
+      function getAdminProductsAll() {
+        if (typeof SiteStorage === "undefined") return [];
+        var list = SiteStorage.getAdminProducts();
+        return Array.isArray(list) ? list : [];
+      }
+
+      function catalogUnifiedRows() {
+        var rawAdmin = getAdminProductsAll();
+        var mocks = MOCK_PRODUCTS.map(function (p, idx) {
+          return { kind: "mock", mockIndex: idx, p: p };
+        });
+        if (rawAdmin.length === 0) {
+          return mocks;
+        }
+        var activeAdmin = rawAdmin.filter(function (x) {
+          return x.isActive;
+        });
+        var adminRows = activeAdmin.map(function (ap) {
+          return { kind: "admin", ap: ap };
+        });
+        return mocks.concat(adminRows);
+      }
+
+      function unifiedSearchBlob(item) {
+        if (item.kind === "mock") {
+          return productSearchBlob(item.p);
+        }
+        var ap = item.ap;
+        return (
+          ap.title +
+          " " +
+          ap.shortDescription +
+          " " +
+          (ap.fullDescription || "") +
+          " " +
+          (ap.specs || "") +
+          " " +
+          (ap.category || "") +
+          " " +
+          (ap.price || "")
+        ).toLowerCase();
+      }
+
+      function adminProductCategoryKey(ap) {
+        if (ap.categoryKey) return ap.categoryKey;
+        var map = {
+          Печи: "furnaces",
+          "Сушильные шкафы": "dryers",
+          "Вытяжные шкафы": "fume",
+          Автоматизация: "automation",
+          "Пробирный анализ": "assay",
+          Измельчение: "grinding",
+          "Лабораторное оборудование": "lab"
+        };
+        if (ap.category && map[ap.category]) return map[ap.category];
+        return "lab";
+      }
+
+      function unifiedCategoryKey(item) {
+        if (item.kind === "mock") return item.p.categoryKey;
+        return adminProductCategoryKey(item.ap);
+      }
+
+      function telHrefFromDisplay(phone) {
+        var digits = String(phone || "").replace(/\D/g, "");
+        return digits ? "tel:+" + digits : "tel:+998";
+      }
+
+      function applyContactOverrides() {
+        if (typeof SiteStorage === "undefined") return;
+        var s = SiteStorage.getSettings();
+        var emailEl = document.getElementById("contactEmailVal");
+        if (s.displayEmail && emailEl) {
+          var em = String(s.displayEmail).trim();
+          emailEl.textContent = em;
+          emailEl.setAttribute("href", "mailto:" + em);
+        }
+        var phoneEl = document.getElementById("contactPhoneVal");
+        if (phoneEl) {
+          var ph = s.displayPhone && String(s.displayPhone).trim();
+          if (ph) {
+            phoneEl.textContent = ph;
+            phoneEl.setAttribute("href", telHrefFromDisplay(ph));
+          } else {
+            phoneEl.textContent = t("phoneValue");
+            phoneEl.setAttribute("href", telHrefFromDisplay(t("phoneValue")));
+          }
+        }
+        var addr = s.displayAddress && String(s.displayAddress).trim();
+        var addrEl = document.getElementById("contactAddressVal");
+        if (addrEl) {
+          if (addr) addrEl.textContent = addr;
+          else addrEl.textContent = t("addressValue");
+        }
+      }
+
+      var activeCategory = "all";
+      var productsGrid = document.getElementById("productsGrid");
+      var categoriesEl = document.getElementById("categories");
+      var searchInput = document.getElementById("searchInput");
+      var form = document.getElementById("requestForm");
+      var fieldEquipment = document.getElementById("fieldEquipment");
+      var FORM_SUCCESS_MESSAGE = "Заявка успешно отправлена. Наш специалист свяжется с вами.";
+      var SITE_REQUESTS_ENDPOINT = "/api/v1/site-requests";
+
+      function escapeHtml(s) {
+        return String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function productImageFallback(el) {
+        el.onerror = null;
+        var missingSrc = el.getAttribute("src") || "";
+
+        var placeholder = document.createElement("div");
+        placeholder.className = "missing-image-placeholder";
+        if (el.classList && el.classList.contains("hero-photo-main")) {
+          placeholder.classList.add("hero-photo-main");
+        }
+
+        var strong = document.createElement("strong");
+        strong.textContent = t("missingPhoto");
+        var span = document.createElement("span");
+        span.textContent = missingSrc;
+
+        placeholder.appendChild(strong);
+        placeholder.appendChild(span);
+        el.replaceWith(placeholder);
+      }
+      window.productImageFallback = productImageFallback;
+
+      document.getElementById("logoHeader").addEventListener("error", function () {
+        this.style.display = "none";
+      });
+
+      document.getElementById("logoFooter").addEventListener("error", function () {
+        this.style.display = "none";
+      });
+
+      document.getElementById("aboutImg").addEventListener("error", function () {
+        productImageFallback(this);
+      });
+
+      function renderCategories() {
+        categoriesEl.innerHTML = CATEGORY_ORDER.map(function (c) {
+          var label = t(c.tkey);
+          var cls = c.key === activeCategory ? "cat-btn active" : "cat-btn";
+          return '<button type="button" class="' + cls + '" data-cat="' + escapeHtml(c.key) + '">' + escapeHtml(label) + "</button>";
+        }).join("");
+
+        categoriesEl.querySelectorAll(".cat-btn").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            activeCategory = btn.getAttribute("data-cat") || "all";
+            renderCategories();
+            renderProducts();
+          });
+        });
+      }
+
+      function productCardUnified(item) {
+        var pt;
+        var imageSrc;
+        var badge;
+        var priceHtml = "";
+        var moreHtml = "";
+        if (item.kind === "mock") {
+          var p = item.p;
+          pt = productStrings(p);
+          imageSrc = p.image;
+          badge = categoryLabelForKey(p.categoryKey);
+        } else {
+          var ap = item.ap;
+          pt = {
+            name: ap.title,
+            description: ap.shortDescription,
+            specs: specsLinesFromAdminString(ap.specs)
+          };
+          imageSrc = ap.image || "";
+          badge = ap.category ? ap.category : categoryLabelForKey(adminProductCategoryKey(ap));
+          if (ap.price) {
+            priceHtml = '<div class="product-price">' + escapeHtml(ap.price) + "</div>";
+          }
+          if (ap.fullDescription && String(ap.fullDescription).trim()) {
+            moreHtml =
+              '<details class="product-more"><summary>Подробнее</summary><p>' +
+              escapeHtml(ap.fullDescription) +
+              "</p></details>";
+          }
+        }
+        var specsHtml = (pt.specs || [])
+          .map(function (s) {
+            return "<li>" + escapeHtml(s) + "</li>";
+          })
+          .join("");
+        var nameEsc = escapeHtml(pt.name);
+        var enc = encodeURIComponent(pt.name);
+        return (
+          '<article class="product-card">' +
+          '<div class="product-media"><img src="' +
+          escapeHtml(imageSrc) +
+          '" alt="' +
+          nameEsc +
+          '" onerror="productImageFallback(this)" /></div>' +
+          '<div class="product-body">' +
+          '<span class="badge">' +
+          escapeHtml(badge) +
+          "</span>" +
+          "<h3>" +
+          nameEsc +
+          "</h3>" +
+          priceHtml +
+          "<p>" +
+          escapeHtml(pt.description) +
+          "</p>" +
+          moreHtml +
+          '<ul class="specs">' +
+          specsHtml +
+          "</ul>" +
+          '<button type="button" class="btn btn-primary order-btn" data-product="' +
+          enc +
+          '">' +
+          escapeHtml(t("orderBtn")) +
+          "</button>" +
+          "</div></article>"
+        );
+      }
+
+      function renderProducts() {
+        var q = searchInput.value.trim().toLowerCase();
+        var rows = catalogUnifiedRows();
+        var filtered = rows.filter(function (item) {
+          var catKey = unifiedCategoryKey(item);
+          var okCat = activeCategory === "all" || catKey === activeCategory;
+          var okSearch = !q || unifiedSearchBlob(item).indexOf(q) !== -1;
+          return okCat && okSearch;
+        });
+
+        if (!filtered.length) {
+          productsGrid.innerHTML = '<p class="empty-state">' + escapeHtml(t("notFound")) + "</p>";
+          return;
+        }
+
+        productsGrid.innerHTML = filtered.map(productCardUnified).join("");
+      }
+
+      productsGrid.addEventListener("click", function (e) {
+        var el = e.target;
+        if (el.nodeType === 3) el = el.parentElement;
+        var btn = el && el.closest ? el.closest(".order-btn") : null;
+        if (!btn || !productsGrid.contains(btn)) return;
+        var enc = btn.getAttribute("data-product");
+        if (!enc) return;
+        try {
+          fieldEquipment.value = decodeURIComponent(enc);
+        } catch (err) {
+          fieldEquipment.value = "";
+        }
+        document.getElementById("request").scrollIntoView({ behavior: "smooth" });
+        fieldEquipment.focus();
+      });
+
+      searchInput.addEventListener("input", renderProducts);
+
+      async function sendSiteRequest(payload) {
+        // Универсальная отправка любой заявки в backend.
+        // Важно: Telegram token/chat id используются только на backend через .env.
+        var response = await fetch(SITE_REQUESTS_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) {
+          throw new Error("Request failed with status " + response.status);
+        }
+        return response.json();
+      }
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        var name = document.getElementById("fieldName").value.trim();
+        var phone = document.getElementById("fieldPhone").value.trim();
+        var email = document.getElementById("fieldEmail").value.trim();
+        var equipment = fieldEquipment.value.trim();
+        var comment = document.getElementById("fieldComment").value.trim();
+        if (!name || !phone || !equipment) {
+          alert(t("fillAlert"));
+          return;
+        }
+        if (typeof SiteStorage !== "undefined") {
+          var extra = email ? "Email: " + email + (comment ? "\n" : "") : "";
+          var fullComment = extra + comment;
+          SiteStorage.appendOrder({
+            id: "o_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 9),
+            createdAt: new Date().toISOString(),
+            customerName: name,
+            phone: phone,
+            equipmentTitle: equipment,
+            comment: fullComment || "",
+            status: "Новый"
+          });
+        }
+        try {
+          // Преобразуем поля формы к универсальной backend-схеме.
+          await sendSiteRequest({
+            form_type: "Оставить заявку",
+            name: name,
+            phone: phone,
+            company: "",
+            product: equipment,
+            message: (email ? "Email: " + email + (comment ? "\n" : "") : "") + comment
+          });
+          alert(FORM_SUCCESS_MESSAGE);
+          form.reset();
+          applyLanguage(currentLang);
+        } catch (err) {
+          // Если backend недоступен, пользователь получает понятную ошибку, а форма не очищается.
+          alert("Не удалось отправить заявку. Пожалуйста, попробуйте еще раз.");
+          console.error("Site request submit failed:", err);
+        }
+      });
+
+      document.getElementById("mobileBtn").addEventListener("click", function () {
+        document.getElementById("mobileDrawer").classList.toggle("open");
+      });
+
+      document.getElementById("mobileDrawer").querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          document.getElementById("mobileDrawer").classList.remove("open");
+        });
+      });
+
+      document.querySelectorAll(".lang-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var lang = btn.getAttribute("data-lang");
+          if (lang) applyLanguage(lang);
+        });
+      });
+
+      applyLanguage(currentLang);
+      applyContactOverrides();
+
+      window.addEventListener("storage", function (e) {
+        if (typeof SiteStorage === "undefined") return;
+        if (
+          e.key === SiteStorage.LS_PRODUCTS ||
+          e.key === SiteStorage.LS_SETTINGS ||
+          e.key === SiteStorage.LS_ORDERS ||
+          e.key === null
+        ) {
+          applyContactOverrides();
+          renderProducts();
+        }
+      });
+
+      window.addEventListener("focus", function () {
+        applyContactOverrides();
+        renderProducts();
+      });
+    })();
+  </script>
+</body>
+</html>
